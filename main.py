@@ -15,16 +15,10 @@ from extension import tunabot_embed, tunabot_background, tunabot_webhook, tunabo
 
 # 봇 실행 전에, 데이터를 불러옵니다.
 
-if platform.system() == 'Windows':
-    with open('C:/tunabot/tunabot_token.txt') as token_file: # 봇 토큰 불러옴
-        token = token_file.readline()
-    with open('C:/tunabot/tunabot_dbx.txt') as dbx_file: # 드롭박스 토큰 불러옴
-        dbx = dropbox.Dropbox(dbx_file.readline())
-elif platform.system() == 'Linux':
-    with open('$HOME/tunabot/tunabot_token.txt') as token_file:
-        token = token_file.readline()
-    with open('$HOME/tunabot/tunabot_dbx.txt') as dbx_file:
-        dbx = dropbox.Dropbox(dbx_file.readline())
+# 토큰을 변수에 직접 할당하는 부분
+token = "7183264121:AAG2os607mVrejDDGEj3qXfJtjCC1VEhHVU"
+dbx_token = "YOUR_DROPBOX_TOKEN_HERE"  # 드롭박스 토큰을 직접 입력하세요
+
 with open('config.json') as config_file: # 설정 파일 불러옴
     config = json.load(config_file)
 with open('balance.json') as balance_file: # 레벨업 조건 파일 불러옴
